@@ -2,9 +2,10 @@ const menuContent = [
     {
         "text": "Projects",
         "icon": "fa-home",
+        "displaySubmenu": false,
         "subMenu": [
             {
-                "title": "item1",
+                "title": "item1A",
                 "icon": "fa-home",
                 "url": "htpps://"
             },
@@ -23,9 +24,10 @@ const menuContent = [
     {
         "text": "About",
         "icon": "fa-home",
+        "displaySubmenu": false,
         "subMenu": [
             {
-                "title": "item1",
+                "title": "item1B",
                 "icon": "fa-home",
                 "url": "htpps://"
             },
@@ -44,9 +46,10 @@ const menuContent = [
     {
         "text": "Contact",
         "icon": "fa-home",
+        "displaySubmenu": false,
         "subMenu": [
             {
-                "title": "item1",
+                "title": "item1C",
                 "icon": "fa-home",
                 "url": "htpps://"
             },
