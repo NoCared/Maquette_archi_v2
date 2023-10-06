@@ -3,13 +3,31 @@ const initMenu = (data) => {
     ulPrincipal.id = "ulPrincipal";
     document.querySelector('header nav').prepend(ulPrincipal);
 
-    data.forEach(element => {
+    data.forEach((element,index) => {
         const liSubMenu = document.createElement("li");
-        let displaySubmenu = false;
         liSubMenu.innerText = element.text;
         ulPrincipal.append(liSubMenu);
         liSubMenu.addEventListener("click", () => {
             console.dir(element.subMenu);
+            if(!element.displaySubmenu)
+            {
+                const ulSecondary = document.createElement("ul");
+                ulSecondary.classList.add("ulSecondary");
+                ulSecondary.id = "ulSecondary"+index;
+                liSubMenu.append(ulSecondary);
+
+                element.subMenu.forEach(elementSub => {
+                    console.dir(elementSub);
+                    const liSubSubMenu = document.createElement("li");
+                    liSubSubMenu.innerText = elementSub.title;
+                    ulSecondary.append(liSubSubMenu);
+                });
+            }
+            else
+            {
+                document.querySelector("#ulSecondary" + index).remove();
+            }
+            element.displaySubmenu = !element.displaySubmenu;
         })
     });
 };
