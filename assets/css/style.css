@@ -1,0 +1,309 @@
+@font-face {
+    font-family: 'segoeui';
+    src: url(../font/SEGOEUI.TTF);
+}
+
+
+body {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'segoeui', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10vh;
+}
+
+
+/* HEADER */
+
+header nav {
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    box-shadow: 0px 10px 10px 0px rgba(140, 140, 140, 0.75);
+    -webkit-box-shadow: 0px 10px 10px 0px rgba(140, 140, 140, 0.75);
+    -moz-box-shadow: 0px 10px 10px 0px rgba(140, 140, 140, 0.75);
+
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    top: 0;
+    z-index: 1;
+}
+
+header #logo {
+    
+    font-size: 1.2rem;
+    letter-spacing: .3rem;
+    padding: 0 1.5rem;
+}
+
+header ul {
+    padding: 0;
+    height: 100%;
+    list-style: none;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header li {
+    padding: 1.1rem 1.3vw;
+    font-size: 1.5rem;
+}
+
+
+#header_img {
+    background-image: url(../img/architect.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 99%;
+
+    
+    height: 30vh;
+    margin: 0;
+    margin-top: 7vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    display: flex;
+    margin: 0;
+    font-size: 2.5rem;
+    color: white;
+    align-items: center;
+}
+
+h1 span:first-child {
+    background-color: rgba(0, 0, 0, .75);
+    padding: 1rem 1rem;
+    margin: 1rem;
+    font-weight: bold;
+}
+
+h1 span:last-child {
+    font-weight: normal;
+    display: none;
+}
+
+
+
+/* PROJECTS */
+
+
+h2 {
+    font-weight: normal;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+#projects,
+#about,
+#contact {
+    width: 80%;
+    margin: 5rem auto 2rem auto;
+}
+
+
+#projects #gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#projects #gallery div {
+    padding: .5rem .5rem;
+    width:  100%;
+
+    /* En utilisant la position relative sur un parent 
+    je rend tous ses enfants en position absolute 
+    dépendante de lui en top, bottom,etc... */
+    position: relative;
+}
+
+#projects #gallery span {
+    background-color: black;
+    padding: 1vw;
+    font-weight: 800;
+    color: white;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+
+/* ABOUT */
+
+#about .cards {
+    margin: 5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+#about .card {
+    width: 100%;
+}
+
+#about .cards div {
+    padding: .5rem 0 1rem 0;
+}
+
+#about .cards img {
+    filter: grayscale(75%);
+}
+
+#about .cards input {
+    width: 100%;
+    border: none;
+    height: 4vh;
+}
+
+#about h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+#about h4 {
+    margin: 1rem 0;
+    font-weight: lighter;
+}
+
+/* CONTACT */
+
+#contact #form {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#contact #form div {
+    margin: .5rem 0;
+    width: 100%;
+}
+
+#contact #form div input {
+    width: 97%;
+    border: 1px grey solid;
+    padding: .4rem;
+}
+
+
+#contact #form div #send {
+    width: fit-content;
+    background-color: black;
+    color: white;
+    margin-top: .5rem;
+    padding: .3rem 1rem;
+}
+
+
+#contact #map {
+    margin-top: 3rem;
+}
+
+#contact {
+    margin-bottom: 0rem;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    background-color: rgba(0, 125, 255, .5);
+}
+
+a:link{
+    text-decoration: none;
+}
+
+/* BREAKPOINT MOBILE 576px */
+
+@media screen and (min-width:576px){
+    
+    #about .card,
+    #projects #gallery div {
+        width: 49%;
+    }
+
+    #projects #gallery div {
+        padding: .5rem 0;
+    }
+
+    #projects #gallery span {
+        left: 0px;
+    }
+
+
+    header ul {
+        display: flex;
+    }
+    h1 span:last-child {
+        display: block;
+    }
+    
+    #projects,
+    #about,
+    #contact {
+        width: 95%;
+    }
+}
+
+/* BREAKPOINT BIG TABLET 1200px */
+
+@media screen and (min-width: 1200px) {
+
+    #about .card,
+    #projects #gallery div {
+        width: 24%;
+    }
+
+
+    #header_img {
+        height: 70vh;
+        margin-top: 7vh;
+        margin-left: .5rem;
+    }
+
+    header #logo {
+        font-size: 2rem;
+        letter-spacing: .6rem;
+        padding: 0 1.5vw;
+    }
+}
+
